@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		.shooter {
+			width: 80px; 
+			position: absolute; 	
+		}
+		.box {
+			background-image: url(game.png);
+			height: 1000px; 
+			background-size: 100% 100%;
+		}
+		.zombies {
+			width: 80px; 
+			position: absolute;
+			transition: 1s;
+		}
+	</style>
+</head>
+<body>	
+	
+	<div class="box" style="">
+		
+		<h5 style="position: absolute; left: 600px; top: 50px" class="score">0</h5>
+
+		<!--ГОРОХИ-->
+	    <img class="shooter" src="peashooter.png"  style="top: 250px; left: 500px">		
+		<img class="shooter" src="peashooter.png"  style="top: 350px; left: 500px">	
+		<img class="shooter" src="peashooter.png"  style="top: 450px; left: 500px">	
+		<img class="shooter" src="peashooter.png"  style="top: 550px; left: 500px">
+		<img class="shooter" src="peashooter.png"  style="top: 650px; left: 500px">
+
+
+		<!--ЗОМБИ-->
+		<img class="zombies" src="zombie1.png" style="top: 220px; left: 1300px">
+		<img class="zombies" src="zombie2.png" style="top: 320px; left: 1300px">
+		<img class="zombies" src="zombie2.png" style="top: 420px; left: 1300px">
+		<img class="zombies" src="zombie4.png" style="top: 520px; left: 1300px">
+		<img class="zombies" src="zombie4.png" style="top: 620px; left: 1300px">
+	</div>
+<script>
+
+	let plants = document.querySelectorAll(".shooter");
+	let zombie = document.querySelectorAll(".zombies");
+	let score = 0
+	let lz1 = 1300;
+	let lz2 = 1300;
+	let lz3 = 1300;
+	let lz4 = 1300;
+	let lz5 = 1300;
+
+	zombie[0].onclick = function() {
+		lz1 = lz1 - 100
+		zombie[0].style.left = lz1 + "px"
+		console.log(lz1);
+
+		if(lz1==500){
+			plants[0].style.display = "none"
+			score = score + 1;
+			document.querySelector('.score').innerHTML = score;
+		}
+	}
+	zombie[1].onclick = function() {
+		lz2 = lz2 - 100
+		zombie[1].style.left = lz2 + "px"
+		console.log(lz2);
+
+		if(lz2==500){
+			plants[1].style.display = "none";
+			score = score + 1;
+			document.querySelector('.score').innerHTML = score;
+		}
+	}
+	zombie[2].onclick = function() {
+		lz3 = lz3 - 100
+		zombie[2].style.left = lz3 + "px"
+		console.log(lz3);
+
+		if(lz3==500){
+			plants[2].style.display = "none"
+			score = score + 1;
+			document.querySelector('.score').innerHTML = score;
+		}
+	}
+	zombie[3].onclick = function() {
+		lz4 = lz4 - 100
+		zombie[3].style.left = lz4 + "px"
+		console.log(lz4);
+
+		if(lz4==500){
+			plants[3].style.display = "none"
+			score = score + 1;
+			document.querySelector('.score').innerHTML = score;
+		}
+	}
+	zombie[4].onclick = function() {
+		lz5 = lz5 - 100
+		zombie[4].style.left = lz5 + "px"
+		console.log(lz5);
+
+		if(lz5==500){
+			plants[4].style.display = "none"
+			score = score + 1;
+			document.querySelector('.score').innerHTML = score;
+		}
+	}
+	if(score>=5){
+		zombie[all].style.display = "none"
+	}
+
+</script>
+</body>
+</html>
